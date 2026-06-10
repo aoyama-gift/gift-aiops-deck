@@ -282,12 +282,30 @@
 
 </div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 <script>
+ var NOTES=[
+  "会議・商談・現場の記録を“AIが使える資産”に変える提案です。今日のゴールは、御社で何から始めるかを一緒に決めること。",
+  "記録が貯まり→構造化され→提案として返り→最後は競合が真似できない資産になる、という全体の流れです。",
+  "AI研修やツール導入だけでは現場が変わらない3つの理由。御社でも心当たりがあれば教えてください。",
+  "先に整えるのはツールではなく“会社の文脈”。記録を中央の判断資産に集め、AIが使える形にします。",
+  "構造化・専用エージェント2体・伴走研修の3点セットで、AIが働ける環境をまとめて用意します。",
+  "社員は普通に仕事するだけ。録音するだけで翌日から要約・提案・アラートが自動で届きます。",
+  "2体目は御社業務に合わせて。要約・参照・提案・フォローのどれを優先したいか伺います。",
+  "すでに本番稼働中の実測値です。1日208時間削減・月400時間創出の実績も。",
+  "データは御社専用環境に隔離。外に出ません。経営判断で重要なポイントです。",
+  "300万円で“使える状態”まで。単なる開発費ではなく、配備と人の育成まで含みます。",
+  "いきなり300万でなく、10万・20万の入口で小さく体験してから判断できます。",
+  "2週間で“勝手に来る”実感、1〜2ヶ月で経営インパクトが数字で見える流れです。",
+  "使うほど判断資産が複利で育つ。3年後には競合が真似できない蓄積になります。",
+  "まずは10万の体験から、または本パッケージから。御社の対象を一緒に決めましょう。"
+ ];
+ document.querySelectorAll('.slides > section').forEach(function(s,i){ if(NOTES[i]){ var a=document.createElement('aside'); a.className='notes'; a.textContent=NOTES[i]; s.appendChild(a);} });
  document.querySelectorAll('section[data-background-image]').forEach(function(s){
   var img=s.getAttribute('data-background-image')||'';
   if(/scene-|bg-divider/.test(img)){ var st=s.querySelector('.stage'); if(st){ var l=document.createElement('div'); l.className='lift'; st.insertBefore(l, st.firstChild); } }
  });
- Reveal.initialize({width:1280,height:720,margin:0,controls:true,progress:true,hash:true,transition:'fade',transitionSpeed:'slow',backgroundTransition:'fade'});
+ Reveal.initialize({width:1280,height:720,margin:0,controls:true,progress:true,hash:true,transition:'fade',transitionSpeed:'slow',backgroundTransition:'fade',plugins:[RevealNotes]});
  function animateSlide(slide){
   if(!slide) return;
   slide.querySelectorAll('[data-count]').forEach(function(el){
