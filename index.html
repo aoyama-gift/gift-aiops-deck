@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GIFT AIops 提案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<style>
+ :root{--navy:#0A0E2B;--royal:#1A3FBF;--elec:#2E5BFF;--sky:#65B9DD;}
+ .reveal{font-family:"Noto Sans JP",sans-serif;}
+ .reveal .slides{text-align:left;}
+ .reveal section{padding:0;height:720px;}
+ .stage{position:absolute;inset:0;width:1280px;height:720px;overflow:hidden;}
+ .ey{font-size:18px;letter-spacing:.32em;color:var(--sky);font-weight:800;}
+ .ttl{color:#fff;font-weight:900;line-height:1.22;margin-top:12px;}
+ .sub{color:#c8d6f2;font-size:22px;margin-top:16px;line-height:1.6;}
+ .kw{background:linear-gradient(100deg,#65B9DD,#2E5BFF);-webkit-background-clip:text;background-clip:text;color:transparent;}
+ .pn{position:absolute;right:26px;bottom:18px;color:#9fb6d6;font-size:14px;}
+ .head{position:absolute;left:64px;top:54px;}
+ /* dark base for non-image slides */
+ .auroraDark{background:linear-gradient(282deg,#0A0E2B 0%,#141834 40%,#1A3FBF 100%);}
+ .blob{position:absolute;border-radius:50%;filter:blur(80px);mix-blend-mode:screen;}
+ .gA{width:560px;height:560px;left:-120px;top:120px;background:radial-gradient(circle,#2E5BFF,transparent 70%);}
+ .gB{width:460px;height:460px;left:120px;top:-120px;background:radial-gradient(circle,#65B9DD,transparent 70%);opacity:.6;}
+ .grain{position:absolute;inset:0;opacity:.08;mix-blend-mode:overlay;pointer-events:none;}
+ /* cards */
+ .cards{position:absolute;display:flex;gap:22px;}
+ .card{background:rgba(255,255,255,.08);backdrop-filter:blur(8px);border:1px solid rgba(140,180,255,.32);border-radius:16px;padding:24px;}
+ .card .h{color:#fff;font-weight:800;font-size:23px;}
+ .card .p{color:#bcd0f2;font-size:16px;margin-top:9px;line-height:1.55;}
+ .num{display:inline-flex;width:38px;height:38px;border-radius:11px;background:linear-gradient(120deg,#2E5BFF,#65B9DD);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;}
+ /* labels over scenes */
+ .lab{position:absolute;text-align:center;transform:translateX(-50%);}
+ .lab .no{display:inline-flex;width:30px;height:30px;border-radius:50%;background:linear-gradient(120deg,#2E5BFF,#65B9DD);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:15px;box-shadow:0 0 14px rgba(46,91,255,.8);}
+ .lab .h{color:#fff;font-weight:800;font-size:20px;margin-top:7px;}
+ .lab .p{color:#bcd0f2;font-size:13px;margin-top:4px;line-height:1.4;}
+ .chip{position:absolute;color:#eaf6ff;font-size:15px;font-weight:700;background:rgba(46,91,255,.2);border:1px solid rgba(120,170,255,.6);border-radius:20px;padding:5px 14px;transform:translateX(-50%);}
+ .zone{position:absolute;color:#fff;}
+ .zone .h{font-weight:800;font-size:20px;}
+ .zone .p{color:#bcd0f2;font-size:14px;margin-top:3px;}
+ .band{position:absolute;left:64px;right:64px;bottom:54px;color:#dff0ff;font-size:18px;font-weight:700;background:rgba(46,91,255,.16);border-left:4px solid #65B9DD;border-radius:0 10px 10px 0;padding:15px 20px;}
+ .bullet{color:#dff0ff;font-size:19px;margin-top:14px;}
+ .bullet .d{display:inline-block;width:9px;height:9px;border-radius:50%;background:#65B9DD;box-shadow:0 0 8px #2E5BFF;margin-right:10px;}
+ .pricebox{position:absolute;right:80px;top:150px;width:430px;background:rgba(10,18,46,.5);border:1px solid rgba(120,170,255,.4);border-radius:18px;padding:30px 34px;}
+ .pricebox .big{font-size:74px;font-weight:900;background:linear-gradient(100deg,#65B9DD,#2E5BFF);-webkit-background-clip:text;background-clip:text;color:transparent;}
+ .pricebox .li{color:#dbe8fb;font-size:17px;margin-top:9px;}
+ .pricebox .li .d{color:#65B9DD;margin-right:8px;}
+ .opt{color:#eaf3ff;font-size:22px;margin-top:16px;}
+ .opt .d{color:#65B9DD;margin-right:10px;}
+ /* entry plans */
+ .plan{background:rgba(255,255,255,.07);border:1px solid rgba(140,180,255,.32);border-radius:16px;padding:24px 28px;width:430px;}
+ .plan .t{color:#65B9DD;font-weight:800;font-size:16px;letter-spacing:.1em;}
+ .plan .v{font-size:54px;font-weight:900;color:#fff;margin:6px 0;}
+ .plan .d{color:#bcd0f2;font-size:15px;}
+ /* fade-up on slide enter */
+ .anim{opacity:0;transform:translateY(26px);}
+ .present .anim{animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+ @keyframes rise{to{opacity:1;transform:translateY(0);}}
+ .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}.d6{animation-delay:.74s}
+ svg text{font-family:"Noto Sans JP",sans-serif;}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- 01 表紙 -->
+<section data-background-image="assets/scene-01-cover.png" data-background-size="cover">
+ <div class="stage">
+  <div style="position:absolute;left:600px;top:150px;">
+   <div class="ey anim d1">AI OPERATIONS</div>
+   <div class="ttl anim d2" style="font-size:56px;">会社の<span class="kw">判断</span>を、<br>AIが使える<span class="kw">資産</span>に。</div>
+   <div class="sub anim d3">会議・商談・現場の記録を、AIが動かせる形に整える。</div>
+  </div>
+  <div class="pn">GIFT AIops</div>
+ </div>
+</section>
+
+<!-- 全体像 -->
+<section data-background-image="assets/scene-00-journey.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">HOW IT WORKS</div><div class="ttl anim d2" style="font-size:34px;">記録が、<span class="kw">判断資産</span>になるまで。</div></div>
+  <div class="lab anim d2" style="left:128px;bottom:60px;"><div class="no">1</div><div class="h">記録</div><div class="p">会議・商談・通話</div></div>
+  <div class="lab anim d3" style="left:372px;bottom:60px;"><div class="no">2</div><div class="h">蓄積</div><div class="p">受動的に貯まる</div></div>
+  <div class="lab anim d4" style="left:618px;bottom:60px;"><div class="no">3</div><div class="h">構造化</div><div class="p">人名・タスク・判断を抽出</div></div>
+  <div class="lab anim d5" style="left:862px;bottom:60px;"><div class="no">4</div><div class="h">提案</div><div class="p">要約・提案・横断検索</div></div>
+  <div class="lab anim d6" style="left:1098px;bottom:60px;"><div class="no">5</div><div class="h">資産化</div><div class="p">複利で育つ判断資産</div></div>
+ </div>
+</section>
+
+<!-- 02 課題 -->
+<section data-background-image="assets/bg-content.png" data-background-size="cover">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">PROBLEM</div><div class="ttl anim d2" style="color:#0a1733;font-size:40px;">AI研修だけでは、現場は変わらない。</div></div>
+  <div class="cards" style="left:64px;top:300px;">
+   <div class="card anim d3" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="h" style="color:#0a1733;">情報が散らばる</div><div class="p" style="color:#46618a;">会議録・チャット・資料が分かれ、AIが参照しにくい。</div></div>
+   <div class="card anim d4" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="h" style="color:#0a1733;">属人化が残る</div><div class="p" style="color:#46618a;">エースの判断や提案の型が、チームで再利用されない。</div></div>
+   <div class="card anim d5" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="h" style="color:#0a1733;">導入が続かない</div><div class="p" style="color:#46618a;">便利なツールで終わり、業務の流れに組み込まれない。</div></div>
+  </div>
+  <div class="pn" style="color:#6f86a8;">02</div>
+ </div>
+</section>
+
+<!-- 03 コア -->
+<section data-background-image="assets/scene-03-core.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">CORE IDEA</div><div class="ttl anim d2" style="font-size:34px;">会社の文脈を、<span class="kw">AIが使える形</span>に。</div></div>
+  <div class="zone anim d3" style="left:90px;top:170px;width:230px;"><div class="h">日々の記録</div><div class="p">会議・商談・通話・資料</div></div>
+  <div class="chip anim d4" style="left:585px;bottom:150px;">判断資産（CONTEXT）</div>
+  <div class="zone anim d5" style="left:940px;top:170px;width:240px;"><div class="h">AIの出力</div><div class="p">要約・検索・提案・アラート</div></div>
+  <div class="pn">03</div>
+ </div>
+</section>
+
+<!-- 04 解決 -->
+<section data-background-image="assets/bg-content.png" data-background-size="cover">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">GIFT AIOPS</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;">AIが働ける<span class="kw">環境</span>を、まとめて作ります。</div></div>
+  <div class="cards" style="left:64px;top:320px;">
+   <div class="card anim d3" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;">コンテキスト構造化</div><div class="p" style="color:#46618a;">記録を、AIが根拠を持って使える形に。</div></div>
+   <div class="card anim d4" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;">専用エージェント2体</div><div class="p" style="color:#46618a;">御社の業務に合わせて初期構築。</div></div>
+   <div class="card anim d5" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;">伴走・AI研修</div><div class="p" style="color:#46618a;">2名まで。改善が続く状態に。</div></div>
+  </div>
+  <div class="pn" style="color:#6f86a8;">04</div>
+ </div>
+</section>
+
+<!-- 05 受動蓄積 -->
+<section data-background-image="assets/scene-05-flow.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">AGENT 01</div><div class="ttl anim d2" style="font-size:33px;">社員は普通に仕事するだけ。<span class="kw">AIが勝手に</span>価値を出す。</div></div>
+  <div class="chip anim d3" style="left:560px;top:250px;">日次サマリー</div>
+  <div class="chip anim d4" style="left:728px;top:225px;">提案</div>
+  <div class="chip anim d5" style="left:898px;top:258px;">アラート</div>
+  <div class="band anim d4">特別な操作は不要。会議を録音するだけで、翌日から自動要約が届き始めます。</div>
+  <div class="pn">05</div>
+ </div>
+</section>
+
+<!-- 06 Agent02 -->
+<section data-background-image="assets/bg-content.png" data-background-size="cover">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">AGENT 02</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;">日々の業務を、速く、ぶれにくく。</div></div>
+  <div class="cards" style="left:64px;top:330px;">
+   <div class="card anim d3" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;font-size:20px;">記録を要約</div><div class="p" style="color:#46618a;">通話・会議・商談の要点と次アクション。</div></div>
+   <div class="card anim d4" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;font-size:20px;">過去を参照</div><div class="p" style="color:#46618a;">似た事例・言い回しを横断検索。</div></div>
+   <div class="card anim d5" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;font-size:20px;">提案・レポート</div><div class="p" style="color:#46618a;">骨子・下書きを自動で。</div></div>
+   <div class="card anim d6" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">4</div><div class="h" style="color:#0a1733;font-size:20px;">フォローを残す</div><div class="p" style="color:#46618a;">次に必要な記録とリマインド。</div></div>
+  </div>
+  <div class="pn" style="color:#6f86a8;">06</div>
+ </div>
+</section>
+
+<!-- 07 実績 -->
+<section data-background-image="assets/bg-divider.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">TRACK RECORD</div><div class="ttl anim d2" style="font-size:34px;">数字で出る、本番稼働の実績。</div></div>
+  <svg class="anim d3" style="position:absolute;inset:0;" width="1280" height="720" viewBox="0 0 1280 720">
+   <defs>
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E5BFF"/><stop offset="1" stop-color="#65B9DD"/></linearGradient>
+    <filter id="gg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+   </defs>
+   <g transform="translate(250,340)"><circle r="92" fill="none" stroke="#1c2c58" stroke-width="16"/><circle r="92" fill="none" stroke="url(#rg)" stroke-width="16" stroke-linecap="round" filter="url(#gg)" stroke-dasharray="566" stroke-dashoffset="11" transform="rotate(-90)"/></g>
+   <g transform="translate(540,340)"><circle r="92" fill="none" stroke="#1c2c58" stroke-width="16"/><circle r="92" fill="none" stroke="url(#rg)" stroke-width="16" stroke-linecap="round" filter="url(#gg)" stroke-dasharray="578" stroke-dashoffset="87" transform="rotate(-90)"/></g>
+   <g transform="translate(830,340)"><circle r="92" fill="none" stroke="#1c2c58" stroke-width="16"/><circle r="92" fill="none" stroke="url(#rg)" stroke-width="16" stroke-linecap="round" filter="url(#gg)" stroke-dasharray="578" stroke-dashoffset="2" transform="rotate(-90)"/></g>
+   <g fill="#fff" font-weight="800" text-anchor="middle"><text x="250" y="352" font-size="46">98%</text><text x="540" y="352" font-size="46">85%</text><text x="830" y="352" font-size="42">99.6%</text></g>
+   <g fill="#bcd0f2" font-size="18" text-anchor="middle"><text x="250" y="470">Entity抽出精度</text><text x="540" y="470">検索精度</text><text x="830" y="470">データ整合性</text></g>
+  </svg>
+  <div class="card anim d4" style="position:absolute;left:1004px;top:248px;width:250px;"><div style="font-size:34px;font-weight:900;color:#fff;">57ms</div><div style="color:#bcd0f2;font-size:14px;">検索応答速度（p95）</div></div>
+  <div class="card anim d5" style="position:absolute;left:1004px;top:360px;width:250px;"><div style="font-size:34px;font-weight:900;color:#fff;">6,600+</div><div style="color:#bcd0f2;font-size:14px;">構造化ドキュメント・稼働中</div></div>
+  <div class="band anim d5" style="bottom:60px;">1日あたり最大 208時間 を削減／レポート自動化で 月約400時間 を創出。</div>
+  <div class="pn">07</div>
+ </div>
+</section>
+
+<!-- 08 セキュリティ -->
+<section data-background-image="assets/scene-08-security.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div style="position:absolute;left:640px;top:200px;width:560px;">
+   <div class="ey anim d1">SECURITY</div>
+   <div class="ttl anim d2" style="font-size:38px;">データは御社<span class="kw">専用環境</span>にのみ。<br>外に出ません。</div>
+   <div class="bullet anim d3"><span class="d"></span>専用サーバーに隔離して保管</div>
+   <div class="bullet anim d4"><span class="d"></span>外部にデータが出ることはない</div>
+  </div>
+  <div class="pn">08</div>
+ </div>
+</section>
+
+<!-- 09 価格 -->
+<section data-background-image="assets/bg-hero.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">PACKAGE</div><div class="ttl anim d2" style="font-size:38px;">導入後に<span class="kw">使える状態</span>まで。</div>
+   <div class="sub anim d3" style="max-width:430px;">単なる開発費ではなく、文脈を整え、AIを配備し、使う人を育てる費用です。</div></div>
+  <div class="pricebox anim d3">
+   <div class="ey">HOKAGE / GIFT AIOPS</div>
+   <div class="big">300万円</div>
+   <div class="li"><span class="d">●</span>情報構造化設定</div>
+   <div class="li"><span class="d">●</span>AIエージェント 2体</div>
+   <div class="li"><span class="d">●</span>2名までのAI研修</div>
+   <div class="li"><span class="d">●</span>10時間相当の研修枠込み</div>
+   <div class="li" style="color:#9fb6d6;margin-top:14px;">研修枠を含めても価格は変わりません。</div>
+  </div>
+  <div class="pn">09</div>
+ </div>
+</section>
+
+<!-- 10 入口 -->
+<section data-background-image="assets/bg-content.png" data-background-size="cover">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">START SMALL</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;">まず体験するなら、小さく始められます。</div>
+   <div class="sub anim d3" style="color:#3a527e;">300万円の前に、小さく体験して判断できます。</div></div>
+  <div class="cards" style="left:64px;top:330px;">
+   <div class="plan anim d4" style="background:rgba(255,255,255,.7);border-color:#cfdcf5;"><div class="t" style="color:#2E5BFF;">TRAINING ・ AI研修プラン</div><div class="v" style="color:#1638c8;">10万円</div><div class="d" style="color:#46618a;">約10時間でAIのコード生成と業務活用を体験。</div></div>
+   <div class="plan anim d5" style="background:rgba(255,255,255,.7);border-color:#cfdcf5;"><div class="t" style="color:#2E5BFF;">AGENT BUILD ・ 専用エージェント構築</div><div class="v" style="color:#1638c8;">20万円</div><div class="d" style="color:#46618a;">本人・小チーム向けの専用AIエージェントを作る。</div></div>
+  </div>
+  <div class="pn" style="color:#6f86a8;">10</div>
+ </div>
+</section>
+
+<!-- 11 フェーズ -->
+<section data-background-image="assets/scene-11-phases.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">GROWTH PATH</div><div class="ttl anim d2" style="font-size:32px;">4段階で、着実に<span class="kw">価値を積み上げ</span>ます。</div></div>
+  <div class="lab anim d3" style="left:215px;top:520px;width:180px;"><div class="h" style="font-size:13px;letter-spacing:.2em;color:#65B9DD;">PHASE 1</div><div class="h">接続 &amp; 蓄積</div></div>
+  <div class="lab anim d4" style="left:470px;top:470px;width:180px;"><div class="h" style="font-size:13px;letter-spacing:.2em;color:#65B9DD;">PHASE 2</div><div class="h">可視化 &amp; 通知</div></div>
+  <div class="lab anim d5" style="left:725px;top:420px;width:180px;"><div class="h" style="font-size:13px;letter-spacing:.2em;color:#65B9DD;">PHASE 3</div><div class="h">提案 &amp; 改善</div></div>
+  <div class="lab anim d6" style="left:1000px;top:300px;width:180px;"><div class="h" style="font-size:13px;letter-spacing:.2em;color:#65B9DD;">PHASE 4</div><div class="h">本格展開</div></div>
+  <div class="pn">11</div>
+ </div>
+</section>
+
+<!-- 12 導入後 -->
+<section data-background-image="assets/bg-divider.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">OUTCOME</div><div class="ttl anim d2" style="font-size:32px;">使うほど、<span class="kw">判断資産</span>が複利で育つ。</div></div>
+  <div class="anim d3" style="position:absolute;right:60px;top:150px;color:#c8d6f2;font-size:14px;">
+   <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="width:22px;height:4px;border-radius:3px;background:linear-gradient(90deg,#2E5BFF,#bfeaff);"></span>AIが出す価値</div>
+   <div style="display:flex;align-items:center;gap:8px;"><span style="width:22px;height:4px;border-radius:3px;background:#1f57c8;"></span>蓄積コンテキスト量</div>
+  </div>
+  <svg class="anim d3" style="position:absolute;inset:0;" width="1280" height="720" viewBox="0 0 1280 720">
+   <defs>
+    <linearGradient id="line" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2E5BFF"/><stop offset=".6" stop-color="#65B9DD"/><stop offset="1" stop-color="#bfeaff"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E5BFF" stop-opacity=".4"/><stop offset="1" stop-color="#2E5BFF" stop-opacity="0"/></linearGradient>
+    <filter id="lgf" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="dt"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#2E5BFF"/></radialGradient>
+   </defs>
+   <g stroke="#3a5a9e" stroke-width="1" opacity=".32"><line x1="150" y1="600" x2="1150" y2="600"/><line x1="150" y1="500" x2="1150" y2="500"/><line x1="150" y1="400" x2="1150" y2="400"/><line x1="150" y1="300" x2="1150" y2="300"/><line x1="150" y1="200" x2="1150" y2="200"/></g>
+   <g fill="#7f96bd" font-size="13" text-anchor="end"><text x="135" y="605">低</text><text x="135" y="305">中</text><text x="135" y="205">高</text></g>
+   <g><rect x="300" y="540" width="70" height="60" rx="6" fill="#1b3a86"/><rect x="560" y="450" width="70" height="150" rx="6" fill="#1f57c8"/><rect x="820" y="320" width="70" height="280" rx="6" fill="#2456cf"/><rect x="1080" y="180" width="70" height="420" rx="6" fill="#2E5BFF"/></g>
+   <path d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150 L1115,600 L180,600 Z" fill="url(#area)"/>
+   <path d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150" fill="none" stroke="url(#line)" stroke-width="6" stroke-linecap="round" filter="url(#lgf)"/>
+   <g><circle cx="335" cy="556" r="7" fill="url(#dt)"/><circle cx="595" cy="486" r="7" fill="url(#dt)"/><circle cx="855" cy="360" r="7" fill="url(#dt)"/><circle cx="1115" cy="150" r="11" fill="url(#dt)"/></g>
+   <g fill="#9fb6d6" font-size="17" text-anchor="middle"><text x="335" y="640">1年目</text><text x="595" y="640">2年目</text><text x="855" y="640">3年目</text><text x="1115" y="640" fill="#8fe0ff" font-weight="800">資産化</text></g>
+  </svg>
+  <div class="anim d4" style="position:absolute;left:300px;top:430px;color:#dff0ff;font-size:13px;background:rgba(10,18,46,.7);border:1px solid rgba(120,170,255,.45);border-radius:8px;padding:6px 10px;">蓄積開始 ・ 月400h創出</div>
+  <div class="anim d5" style="position:absolute;left:880px;top:120px;color:#dff0ff;font-size:13px;background:rgba(10,18,46,.7);border:1px solid #8fe0ff;border-radius:8px;padding:6px 10px;">3年分の判断資産＝競合が真似できない</div>
+  <div class="pn">12</div>
+ </div>
+</section>
+
+<!-- 13 締め -->
+<section data-background-image="assets/bg-hero.png" data-background-size="cover" data-background-color="#0A0E2B">
+ <div class="stage">
+  <div class="head"><div class="ey anim d1">NEXT</div><div class="ttl anim d2" style="font-size:46px;">対象を決め、<span class="kw">導入判断</span>へ。</div>
+   <div class="sub anim d3" style="max-width:480px;">社内の小さな体験から始めるか、本パッケージから始めるかを選べます。</div></div>
+  <div style="position:absolute;left:700px;top:250px;">
+   <div class="opt anim d4"><span class="d">●</span>AI研修プラン 10万円で体験</div>
+   <div class="opt anim d5"><span class="d">●</span>専用エージェント構築 20万円で試す</div>
+   <div class="opt anim d6"><span class="d">●</span>GIFT AIops 300万円を本導入</div>
+  </div>
+  <div class="pn">13 ・ GIFT</div>
+ </div>
+</section>
+
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+ Reveal.initialize({width:1280,height:720,margin:0,controls:true,progress:true,hash:true,transition:'fade',transitionSpeed:'slow',backgroundTransition:'fade'});
+</script>
+</body>
+</html>
