@@ -59,6 +59,11 @@
  .present .anim{animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
  @keyframes rise{to{opacity:1;transform:translateY(0);}}
  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}.d5{animation-delay:.6s}.d6{animation-delay:.74s}
+ .bar{transform-box:fill-box;transform-origin:bottom;}
+ .present .bar{animation:grow .9s cubic-bezier(.2,.7,.2,1) backwards;}
+ @keyframes grow{from{transform:scaleY(0);}}
+ .present .area{animation:fadein 1s .4s backwards;}
+ @keyframes fadein{from{opacity:0;}}
  svg text{font-family:"Noto Sans JP",sans-serif;}
 </style>
 </head>
@@ -247,9 +252,9 @@
    </defs>
    <g stroke="#3a5a9e" stroke-width="1" opacity=".32"><line x1="150" y1="600" x2="1150" y2="600"/><line x1="150" y1="500" x2="1150" y2="500"/><line x1="150" y1="400" x2="1150" y2="400"/><line x1="150" y1="300" x2="1150" y2="300"/><line x1="150" y1="200" x2="1150" y2="200"/></g>
    <g fill="#7f96bd" font-size="13" text-anchor="end"><text x="135" y="605">低</text><text x="135" y="305">中</text><text x="135" y="205">高</text></g>
-   <g><rect x="300" y="540" width="70" height="60" rx="6" fill="#1b3a86"/><rect x="560" y="450" width="70" height="150" rx="6" fill="#1f57c8"/><rect x="820" y="320" width="70" height="280" rx="6" fill="#2456cf"/><rect x="1080" y="180" width="70" height="420" rx="6" fill="#2E5BFF"/></g>
-   <path d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150 L1115,600 L180,600 Z" fill="url(#area)"/>
-   <path d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150" fill="none" stroke="url(#line)" stroke-width="6" stroke-linecap="round" filter="url(#lgf)"/>
+   <g><rect class="bar" style="animation-delay:.3s" x="300" y="540" width="70" height="60" rx="6" fill="#1b3a86"/><rect class="bar" style="animation-delay:.45s" x="560" y="450" width="70" height="150" rx="6" fill="#1f57c8"/><rect class="bar" style="animation-delay:.6s" x="820" y="320" width="70" height="280" rx="6" fill="#2456cf"/><rect class="bar" style="animation-delay:.75s" x="1080" y="180" width="70" height="420" rx="6" fill="#2E5BFF"/></g>
+   <path class="area" d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150 L1115,600 L180,600 Z" fill="url(#area)"/>
+   <path class="draw" d="M180,580 C360,560 480,520 640,440 C800,360 920,250 1115,150" fill="none" stroke="url(#line)" stroke-width="6" stroke-linecap="round" filter="url(#lgf)"/>
    <g><circle cx="335" cy="556" r="7" fill="url(#dt)"/><circle cx="595" cy="486" r="7" fill="url(#dt)"/><circle cx="855" cy="360" r="7" fill="url(#dt)"/><circle cx="1115" cy="150" r="11" fill="url(#dt)"/></g>
    <g fill="#9fb6d6" font-size="17" text-anchor="middle"><text x="335" y="640">1年目</text><text x="595" y="640">2年目</text><text x="855" y="640">3年目</text><text x="1115" y="640" fill="#8fe0ff" font-weight="800">資産化</text></g>
   </svg>
@@ -284,6 +289,10 @@
    function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3); var v=to*e;
     el.textContent=(dec?v.toFixed(1):Math.round(v))+suf; if(p<1)requestAnimationFrame(step); else el.textContent=(dec?to.toFixed(1):Math.round(to))+suf; }
    requestAnimationFrame(step);
+  });
+  slide.querySelectorAll('.draw').forEach(function(p){
+   var len=p.getTotalLength(); p.style.transition='none'; p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+   requestAnimationFrame(function(){ requestAnimationFrame(function(){ p.style.transition='stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1)'; p.style.strokeDashoffset=0; }); });
   });
   slide.querySelectorAll('.ring').forEach(function(r){
    r.style.transition='none'; r.setAttribute('stroke-dashoffset', r.dataset.empty);
