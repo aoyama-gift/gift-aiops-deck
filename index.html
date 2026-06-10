@@ -48,6 +48,7 @@
  .pricebox .big{font-size:74px;font-weight:900;background:linear-gradient(100deg,#65B9DD,#2E5BFF);-webkit-background-clip:text;background-clip:text;color:transparent;}
  .pricebox .li{color:#dbe8fb;font-size:17px;margin-top:9px;}
  .pricebox .li .d{color:#65B9DD;margin-right:8px;}
+ .pchip{display:inline-block;color:#eaf3ff;font-size:15px;font-weight:700;background:rgba(46,91,255,.22);border:1px solid rgba(120,170,255,.6);border-radius:18px;padding:7px 14px;}
  .opt{color:#eaf3ff;font-size:22px;margin-top:16px;}
  .opt .d{color:#65B9DD;margin-right:10px;}
  /* entry plans */
@@ -72,7 +73,7 @@
 <div class="reveal"><div class="slides">
 
 <!-- 01 表紙 -->
-<section data-background-image="assets/scene-01-cover.png" data-background-size="cover">
+<section data-background-image="assets/scene-01-cover.webp" data-background-size="cover">
  <div class="stage">
   <div style="position:absolute;left:64px;top:50px;color:#cdddf5;font-weight:800;font-size:21px;letter-spacing:.04em;">GIFT <span style="background:linear-gradient(100deg,#65B9DD,#2E5BFF);-webkit-background-clip:text;background-clip:text;color:transparent;">AIOps</span> Solution</div>
   <div style="position:absolute;left:600px;top:150px;">
@@ -85,7 +86,7 @@
 </section>
 
 <!-- 全体像 -->
-<section data-background-image="assets/scene-00-journey.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/scene-00-journey.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">HOW IT WORKS</div><div class="ttl anim d2" style="font-size:34px;">記録が、<span class="kw">判断資産</span>になるまで。</div></div>
   <div class="lab anim d2" style="left:128px;bottom:60px;"><div class="no">1</div><div class="h">記録</div><div class="p">会議・商談・通話</div></div>
@@ -97,7 +98,7 @@
 </section>
 
 <!-- 02 課題 -->
-<section data-background-image="assets/bg-content.png" data-background-size="cover">
+<section data-background-image="assets/bg-content.webp" data-background-size="cover">
  <div class="stage">
   <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">PROBLEM</div><div class="ttl anim d2" style="color:#0a1733;font-size:40px;text-shadow:none;">AI研修だけでは、現場は変わらない。</div></div>
   <div class="cards" style="left:64px;top:300px;">
@@ -110,20 +111,23 @@
 </section>
 
 <!-- 03 コア -->
-<section data-background-image="assets/scene-03-core.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/scene-03-core.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">CORE IDEA</div><div class="ttl anim d2" style="font-size:34px;">会社の文脈を、<span class="kw">AIが使える形</span>に。</div></div>
   <div class="zone anim d3" style="left:90px;top:170px;width:230px;"><div class="h">日々の記録</div><div class="p">会議・商談・通話・資料</div></div>
-  <div class="chip anim d4" style="left:585px;bottom:150px;">判断資産（CONTEXT）</div>
+  <div class="anim d4" style="position:absolute;left:585px;bottom:138px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:10px 22px 10px 12px;background:linear-gradient(180deg,rgba(46,91,255,.30),rgba(10,18,46,.55));border:1.5px solid rgba(130,185,255,.85);border-radius:32px;box-shadow:0 0 30px rgba(46,91,255,.6),inset 0 0 14px rgba(130,185,255,.25);backdrop-filter:blur(6px);">
+   <span style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#65B9DD,#2E5BFF);box-shadow:0 0 16px rgba(46,91,255,.85);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:17px;">◆</span>
+   <span style="display:flex;flex-direction:column;line-height:1.15;"><span style="color:#fff;font-weight:800;font-size:21px;">判断資産</span><span style="color:#9fd0f5;font-size:11px;letter-spacing:.2em;">CONTEXT ASSET</span></span>
+  </div>
   <div class="zone anim d5" style="left:940px;top:170px;width:240px;"><div class="h">AIの出力</div><div class="p">要約・検索・提案・アラート</div></div>
   <div class="pn">03</div>
  </div>
 </section>
 
 <!-- 04 解決 -->
-<section data-background-image="assets/bg-content.png" data-background-size="cover">
+<section data-background-image="assets/bg-content.webp" data-background-size="cover">
  <div class="stage">
-  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">GIFT AIOPS SOLUTION</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;text-shadow:none;">AIが働ける<span class="kw">環境</span>を、まとめて作ります。</div></div>
+  <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">SOLUTION</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;text-shadow:none;">AIが働ける<span class="kw">環境</span>を、まとめて作ります。</div></div>
   <div class="cards" style="left:64px;top:320px;">
    <div class="card anim d3" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;">コンテキスト構造化</div><div class="p" style="color:#46618a;">記録を、AIが根拠を持って使える形に。</div></div>
    <div class="card anim d4" style="width:340px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;">専用エージェント2体</div><div class="p" style="color:#46618a;">御社の業務に合わせて初期構築。</div></div>
@@ -134,33 +138,33 @@
 </section>
 
 <!-- 05 受動蓄積 -->
-<section data-background-image="assets/scene-05-flow.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/scene-05-flow.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">AGENT 01</div><div class="ttl anim d2" style="font-size:33px;">社員は普通に仕事するだけ。<span class="kw">AIが勝手に</span>価値を出す。</div></div>
-  <div class="chip anim d3" style="left:560px;top:250px;">日次サマリー</div>
-  <div class="chip anim d4" style="left:728px;top:225px;">提案</div>
-  <div class="chip anim d5" style="left:898px;top:258px;">アラート</div>
+  <div class="chip anim d3" style="left:556px;top:236px;">日次サマリー</div>
+  <div class="chip anim d4" style="left:730px;top:236px;">提案</div>
+  <div class="chip anim d5" style="left:902px;top:236px;">アラート</div>
   <div class="band anim d4">特別な操作は不要。会議を録音するだけで、翌日から自動要約が届き始めます。</div>
   <div class="pn">05</div>
  </div>
 </section>
 
 <!-- 06 Agent02 -->
-<section data-background-image="assets/bg-content.png" data-background-size="cover">
+<section data-background-image="assets/bg-content.webp" data-background-size="cover">
  <div class="stage">
   <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">AGENT 02</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;text-shadow:none;">日々の業務を、速く、ぶれにくく。</div></div>
   <div class="cards" style="left:64px;top:330px;">
-   <div class="card anim d3" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;font-size:20px;">記録を要約</div><div class="p" style="color:#46618a;">通話・会議・商談の要点と次アクション。</div></div>
-   <div class="card anim d4" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;font-size:20px;">過去を参照</div><div class="p" style="color:#46618a;">似た事例・言い回しを横断検索。</div></div>
-   <div class="card anim d5" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;font-size:20px;">提案・レポート</div><div class="p" style="color:#46618a;">骨子・下書きを自動で。</div></div>
-   <div class="card anim d6" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">4</div><div class="h" style="color:#0a1733;font-size:20px;">フォローを残す</div><div class="p" style="color:#46618a;">次の記録とリマインドを残す。</div></div>
+   <div class="card anim d3" style="width:256px;min-height:160px;background:rgba(255,255,255,.74);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;font-size:20px;">記録を要約</div><div class="p" style="color:#46618a;">要点と次アクションを抽出。</div></div>
+   <div class="card anim d4" style="width:256px;min-height:160px;background:rgba(255,255,255,.74);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;font-size:20px;">過去を参照</div><div class="p" style="color:#46618a;">似た事例・言い回しを横断検索。</div></div>
+   <div class="card anim d5" style="width:256px;min-height:160px;background:rgba(255,255,255,.74);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;font-size:20px;">提案・レポート</div><div class="p" style="color:#46618a;">骨子・下書きを自動で。</div></div>
+   <div class="card anim d6" style="width:256px;min-height:160px;background:rgba(255,255,255,.74);border-color:#cfdcf5;"><div class="num">4</div><div class="h" style="color:#0a1733;font-size:20px;">フォローを残す</div><div class="p" style="color:#46618a;">次の記録とリマインドを。</div></div>
   </div>
   <div class="pn" style="color:#6f86a8;">06</div>
  </div>
 </section>
 
 <!-- 07 実績 -->
-<section data-background-image="assets/bg-divider.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/bg-divider.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">TRACK RECORD</div><div class="ttl anim d2" style="font-size:34px;">数字で出る、本番稼働の実績。</div></div>
   <svg class="anim d3" style="position:absolute;inset:0;" width="1280" height="720" viewBox="0 0 1280 720">
@@ -174,15 +178,15 @@
    <g fill="#fff" font-weight="800" text-anchor="middle"><text x="250" y="352" font-size="46" data-count="98" data-suf="%">0%</text><text x="540" y="352" font-size="46" data-count="85" data-suf="%">0%</text><text x="830" y="352" font-size="42" data-count="99.6" data-dec="1" data-suf="%">0%</text></g>
    <g fill="#bcd0f2" font-size="18" text-anchor="middle"><text x="250" y="470">Entity抽出精度</text><text x="540" y="470">検索精度</text><text x="830" y="470">データ整合性</text></g>
   </svg>
-  <div class="card anim d4" style="position:absolute;left:1004px;top:248px;width:250px;"><div style="font-size:34px;font-weight:900;color:#fff;" data-count="57" data-suf="ms">0ms</div><div style="color:#bcd0f2;font-size:14px;">検索応答速度（p95）</div></div>
-  <div class="card anim d5" style="position:absolute;left:1004px;top:360px;width:250px;"><div style="font-size:34px;font-weight:900;color:#fff;">6,600+</div><div style="color:#bcd0f2;font-size:14px;">構造化ドキュメント・稼働中</div></div>
+  <div class="card anim d4" style="position:absolute;left:1004px;top:238px;width:250px;padding:18px 22px;"><div style="font-size:38px;font-weight:900;color:#fff;line-height:1;" data-count="57" data-suf="ms">0ms</div><div style="color:#bcd0f2;font-size:14px;margin-top:9px;">検索応答速度（p95）</div></div>
+  <div class="card anim d5" style="position:absolute;left:1004px;top:372px;width:250px;padding:18px 22px;"><div style="font-size:38px;font-weight:900;color:#fff;line-height:1;">6,600<span style="font-size:24px;">+</span></div><div style="color:#bcd0f2;font-size:14px;margin-top:9px;">構造化ドキュメント・稼働中</div></div>
   <div class="band anim d5" style="bottom:60px;">1日あたり最大 208時間 を削減／レポート自動化で 月約400時間 を創出。</div>
   <div class="pn">07</div>
  </div>
 </section>
 
 <!-- 08 セキュリティ -->
-<section data-background-image="assets/scene-08-security.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/scene-08-security.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div style="position:absolute;left:640px;top:200px;width:560px;">
    <div class="ey anim d1">SECURITY</div>
@@ -195,25 +199,27 @@
 </section>
 
 <!-- 09 価格 -->
-<section data-background-image="assets/bg-hero.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/bg-hero.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">PACKAGE</div><div class="ttl anim d2" style="font-size:38px;">導入後に<span class="kw">使える状態</span>まで。</div>
    <div class="sub anim d3" style="max-width:430px;">単なる開発費ではなく、文脈を整え、AIを配備し、使う人を育てる費用です。</div></div>
   <div class="pricebox anim d3">
-   <div class="ey">GIFT AIOPS SOLUTION</div>
+   <div class="ey">PACKAGE</div>
    <div class="big">300万円</div>
-   <div class="li"><span class="d">●</span>情報構造化設定</div>
-   <div class="li"><span class="d">●</span>AIエージェント 2体</div>
-   <div class="li"><span class="d">●</span>2名までのAI研修</div>
-   <div class="li"><span class="d">●</span>10時間相当の研修枠込み</div>
-   <div class="li" style="color:#9fb6d6;margin-top:14px;">研修枠を含めても価格は変わりません。</div>
+   <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:12px;">
+    <span class="pchip">情報構造化設定</span>
+    <span class="pchip">AIエージェント 2体</span>
+    <span class="pchip">2名までのAI研修</span>
+    <span class="pchip">10時間相当の研修枠込み</span>
+   </div>
+   <div class="li" style="color:#9fb6d6;margin-top:16px;">研修枠を含めても価格は変わりません。</div>
   </div>
   <div class="pn">09</div>
  </div>
 </section>
 
 <!-- 10 入口 -->
-<section data-background-image="assets/bg-content.png" data-background-size="cover">
+<section data-background-image="assets/bg-content.webp" data-background-size="cover">
  <div class="stage">
   <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">START SMALL</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;text-shadow:none;">まず体験するなら、小さく始められます。</div>
    <div class="sub anim d3" style="color:#3a527e;">300万円の前に、小さく体験して判断できます。</div></div>
@@ -226,7 +232,7 @@
 </section>
 
 <!-- 11 フェーズ -->
-<section data-background-image="assets/scene-11-phases.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/scene-11-phases.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">GROWTH PATH</div><div class="ttl anim d2" style="font-size:32px;">4段階で、着実に<span class="kw">価値を積み上げ</span>ます。</div></div>
   <div class="lab anim d3" style="left:215px;top:520px;width:180px;"><div class="h" style="font-size:13px;letter-spacing:.2em;color:#65B9DD;">PHASE 1</div><div class="h">接続 &amp; 蓄積</div></div>
@@ -238,7 +244,7 @@
 </section>
 
 <!-- 12 導入後 -->
-<section data-background-image="assets/bg-divider.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/bg-divider.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">OUTCOME</div><div class="ttl anim d2" style="font-size:32px;">使うほど、<span class="kw">判断資産</span>が複利で育つ。</div></div>
   <!-- legend moved below svg -->
@@ -268,14 +274,14 @@
 </section>
 
 <!-- 13 締め -->
-<section data-background-image="assets/bg-hero.png" data-background-size="cover" data-background-color="#0A0E2B">
+<section data-background-image="assets/bg-hero.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">NEXT</div><div class="ttl anim d2" style="font-size:46px;">対象を決め、<span class="kw">導入判断</span>へ。</div>
    <div class="sub anim d3" style="max-width:480px;">社内の小さな体験から始めるか、本パッケージから始めるかを選べます。</div></div>
   <div style="position:absolute;left:700px;top:250px;">
    <div class="opt anim d4"><span class="d">●</span>AI研修プラン 10万円で体験</div>
    <div class="opt anim d5"><span class="d">●</span>専用エージェント構築 20万円で試す</div>
-   <div class="opt anim d6"><span class="d">●</span>GIFT AIOps Solution 300万円を本導入</div>
+   <div class="opt anim d6"><span class="d">●</span>本パッケージ（300万円）を本導入</div>
   </div>
   <div class="pn">13 ・ GIFT</div>
  </div>
