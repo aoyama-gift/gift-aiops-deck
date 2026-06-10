@@ -33,13 +33,14 @@
  .num{display:inline-flex;width:38px;height:38px;border-radius:11px;background:linear-gradient(120deg,#2E5BFF,#65B9DD);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;}
  /* labels over scenes */
  .lab{position:absolute;text-align:center;transform:translateX(-50%);}
- .lab .no{display:inline-flex;width:30px;height:30px;border-radius:50%;background:linear-gradient(120deg,#2E5BFF,#65B9DD);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:15px;box-shadow:0 0 14px rgba(46,91,255,.8);}
- .lab .h{color:#fff;font-weight:800;font-size:20px;margin-top:7px;}
- .lab .p{color:#bcd0f2;font-size:13px;margin-top:4px;line-height:1.4;}
- .chip{position:absolute;color:#eaf6ff;font-size:15px;font-weight:700;background:rgba(46,91,255,.2);border:1px solid rgba(120,170,255,.6);border-radius:20px;padding:5px 14px;transform:translateX(-50%);}
+ .lab .no{display:inline-flex;width:36px;height:36px;border-radius:50%;background:linear-gradient(120deg,#2E5BFF,#65B9DD);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 16px rgba(46,91,255,.85);}
+ .lab .h{color:#fff;font-weight:800;font-size:24px;margin-top:9px;}
+ .lab .p{color:#cdddf5;font-size:16px;margin-top:5px;line-height:1.45;}
+ .chip{position:absolute;color:#eaf6ff;font-size:20px;font-weight:800;background:rgba(46,91,255,.26);border:1px solid rgba(120,170,255,.7);border-radius:26px;padding:9px 22px;transform:translateX(-50%);box-shadow:0 4px 18px rgba(10,18,46,.4);}
  .zone{position:absolute;color:#fff;}
- .zone .h{font-weight:800;font-size:20px;}
- .zone .p{color:#bcd0f2;font-size:14px;margin-top:3px;}
+ .zone .h{font-weight:800;font-size:25px;}
+ .zone .p{color:#cdddf5;font-size:17px;margin-top:4px;}
+ .lift{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(120% 95% at 64% 32%, rgba(46,91,255,.20), rgba(26,63,191,.08) 46%, transparent 76%);}
  .band{position:absolute;left:64px;right:64px;bottom:54px;color:#dff0ff;font-size:18px;font-weight:700;background:rgba(46,91,255,.16);border-left:4px solid #65B9DD;border-radius:0 10px 10px 0;padding:15px 20px;}
  .bullet{color:#dff0ff;font-size:19px;margin-top:14px;}
  .bullet .d{display:inline-block;width:9px;height:9px;border-radius:50%;background:#65B9DD;box-shadow:0 0 8px #2E5BFF;margin-right:10px;}
@@ -148,10 +149,10 @@
  <div class="stage">
   <div class="head"><div class="ey anim d1" style="color:#2E5BFF;">AGENT 02</div><div class="ttl anim d2" style="color:#0a1733;font-size:38px;">日々の業務を、速く、ぶれにくく。</div></div>
   <div class="cards" style="left:64px;top:330px;">
-   <div class="card anim d3" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;font-size:20px;">記録を要約</div><div class="p" style="color:#46618a;">通話・会議・商談の要点と次アクション。</div></div>
-   <div class="card anim d4" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;font-size:20px;">過去を参照</div><div class="p" style="color:#46618a;">似た事例・言い回しを横断検索。</div></div>
-   <div class="card anim d5" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;font-size:20px;">提案・レポート</div><div class="p" style="color:#46618a;">骨子・下書きを自動で。</div></div>
-   <div class="card anim d6" style="width:258px;background:rgba(255,255,255,.66);border-color:#cfdcf5;"><div class="num">4</div><div class="h" style="color:#0a1733;font-size:20px;">フォローを残す</div><div class="p" style="color:#46618a;">次に必要な記録とリマインド。</div></div>
+   <div class="card anim d3" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">1</div><div class="h" style="color:#0a1733;font-size:20px;">記録を要約</div><div class="p" style="color:#46618a;">通話・会議・商談の要点と次アクション。</div></div>
+   <div class="card anim d4" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">2</div><div class="h" style="color:#0a1733;font-size:20px;">過去を参照</div><div class="p" style="color:#46618a;">似た事例・言い回しを横断検索。</div></div>
+   <div class="card anim d5" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">3</div><div class="h" style="color:#0a1733;font-size:20px;">提案・レポート</div><div class="p" style="color:#46618a;">骨子・下書きを自動で。</div></div>
+   <div class="card anim d6" style="width:266px;min-height:150px;background:rgba(255,255,255,.72);border-color:#cfdcf5;"><div class="num">4</div><div class="h" style="color:#0a1733;font-size:20px;">フォローを残す</div><div class="p" style="color:#46618a;">次の記録とリマインドを残す。</div></div>
   </div>
   <div class="pn" style="color:#6f86a8;">06</div>
  </div>
@@ -239,10 +240,7 @@
 <section data-background-image="assets/bg-divider.png" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">OUTCOME</div><div class="ttl anim d2" style="font-size:32px;">使うほど、<span class="kw">判断資産</span>が複利で育つ。</div></div>
-  <div class="anim d3" style="position:absolute;right:60px;top:150px;color:#c8d6f2;font-size:14px;">
-   <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><span style="width:22px;height:4px;border-radius:3px;background:linear-gradient(90deg,#2E5BFF,#bfeaff);"></span>AIが出す価値</div>
-   <div style="display:flex;align-items:center;gap:8px;"><span style="width:22px;height:4px;border-radius:3px;background:#1f57c8;"></span>蓄積コンテキスト量</div>
-  </div>
+  <!-- legend moved below svg -->
   <svg class="anim d3" style="position:absolute;inset:0;" width="1280" height="720" viewBox="0 0 1280 720">
    <defs>
     <linearGradient id="line" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2E5BFF"/><stop offset=".6" stop-color="#65B9DD"/><stop offset="1" stop-color="#bfeaff"/></linearGradient>
@@ -258,6 +256,10 @@
    <g><circle cx="335" cy="556" r="7" fill="url(#dt)"/><circle cx="595" cy="486" r="7" fill="url(#dt)"/><circle cx="855" cy="360" r="7" fill="url(#dt)"/><circle cx="1115" cy="150" r="11" fill="url(#dt)"/></g>
    <g fill="#9fb6d6" font-size="17" text-anchor="middle"><text x="335" y="640">1年目</text><text x="595" y="640">2年目</text><text x="855" y="640">3年目</text><text x="1115" y="640" fill="#8fe0ff" font-weight="800">資産化</text></g>
   </svg>
+  <div class="anim d3" style="position:absolute;left:64px;top:142px;color:#cdddf5;font-size:16px;z-index:5;">
+   <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px;"><span style="width:24px;height:5px;border-radius:3px;background:linear-gradient(90deg,#2E5BFF,#bfeaff);"></span>AIが出す価値</div>
+   <div style="display:flex;align-items:center;gap:9px;"><span style="width:24px;height:5px;border-radius:3px;background:#1f57c8;"></span>蓄積コンテキスト量</div>
+  </div>
   <div class="anim d4" style="position:absolute;left:300px;top:430px;color:#dff0ff;font-size:13px;background:rgba(10,18,46,.7);border:1px solid rgba(120,170,255,.45);border-radius:8px;padding:6px 10px;">蓄積開始 ・ 月400h創出</div>
   <div class="anim d5" style="position:absolute;left:880px;top:120px;color:#dff0ff;font-size:13px;background:rgba(10,18,46,.7);border:1px solid #8fe0ff;border-radius:8px;padding:6px 10px;">3年分の判断資産＝競合が真似できない</div>
   <div class="pn">12</div>
@@ -281,6 +283,10 @@
 </div></div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
+ document.querySelectorAll('section[data-background-image]').forEach(function(s){
+  var img=s.getAttribute('data-background-image')||'';
+  if(/scene-|bg-divider/.test(img)){ var st=s.querySelector('.stage'); if(st){ var l=document.createElement('div'); l.className='lift'; st.insertBefore(l, st.firstChild); } }
+ });
  Reveal.initialize({width:1280,height:720,margin:0,controls:true,progress:true,hash:true,transition:'fade',transitionSpeed:'slow',backgroundTransition:'fade'});
  function animateSlide(slide){
   if(!slide) return;
