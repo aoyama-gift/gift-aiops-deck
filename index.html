@@ -38,6 +38,7 @@
  .lab .h{color:#fff;font-weight:800;font-size:24px;margin-top:9px;}
  .lab .p{color:#cdddf5;font-size:16px;margin-top:5px;line-height:1.45;}
  .chip{position:absolute;color:#eaf6ff;font-size:20px;font-weight:800;background:rgba(46,91,255,.26);border:1px solid rgba(120,170,255,.7);border-radius:26px;padding:9px 22px;transform:translateX(-50%);box-shadow:0 4px 18px rgba(10,18,46,.4);}
+ .chip2{color:#eaf6ff;font-size:20px;font-weight:800;background:rgba(46,91,255,.26);border:1px solid rgba(120,170,255,.7);border-radius:26px;padding:9px 22px;box-shadow:0 4px 18px rgba(10,18,46,.4);white-space:nowrap;}
  .zone{position:absolute;color:#fff;}
  .zone .h{font-weight:800;font-size:25px;}
  .zone .p{color:#cdddf5;font-size:17px;margin-top:4px;}
@@ -146,9 +147,9 @@
 <section data-background-image="assets/scene-05-flow.webp" data-background-size="cover" data-background-color="#0A0E2B">
  <div class="stage">
   <div class="head"><div class="ey anim d1">AGENT 01</div><div class="ttl anim d2" style="font-size:33px;">社員は普通に仕事するだけ。<span class="kw">AIが勝手に</span>価値を出す。</div></div>
-  <div class="chip anim d3" style="left:512px;top:228px;">日次サマリー</div>
-  <div class="chip anim d4" style="left:660px;top:228px;">提案</div>
-  <div class="chip anim d5" style="left:808px;top:228px;">アラート</div>
+  <div class="anim d3" style="position:absolute;left:50%;top:228px;transform:translateX(-50%);display:flex;gap:22px;">
+   <span class="chip2">日次サマリー</span><span class="chip2">提案</span><span class="chip2">アラート</span>
+  </div>
   <div class="band anim d4">特別な操作は不要。会議を録音するだけで、翌日から自動要約が届き始めます。</div>
   <div class="pn">05</div>
  </div>
